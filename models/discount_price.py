@@ -109,7 +109,7 @@ class AccountMoveDiscount(models.TransientModel):
                 percent=float_repr(self.discount_percentage * 100, decimal_precision),
             )
             if len(total_per_tax) > 1:
-                description += _("\nOn lines with taxes: %(taxes)s", taxes=", ".join(taxes.mapped('name')))
+                description += _("\nEn líneas con impuestos: %(taxes)s", taxes=", ".join(taxes.mapped('name')))
             vals = self._prepare_discount_line(product, amount, taxes, description)
             vals_list.append(vals)
 
